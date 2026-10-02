@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Your Manuscript | Abir Publishing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.upload-wrap{max-width:800px;margin:auto;padding:70px 20px;}
+.upload-form{background:#fff;border:1px solid var(--line);border-radius:16px;padding:42px;box-shadow:0 16px 44px rgba(10,25,47,.08);}
+.upload-form h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);margin-bottom:8px;}
+.upload-form > p{color:var(--muted);font-size:14.5px;margin-bottom:30px;line-height:1.7;}
+.upload-form label{display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.2px;color:var(--navy);margin-bottom:8px;}
+.upload-form input[type="text"],
+.upload-form input[type="email"],
+.upload-form input[type="tel"],
+.upload-form select,
+.upload-form textarea{width:100%;padding:14px 15px;border:1.5px solid #e5e0d6;border-radius:8px;background:#fdfcf9;color:var(--text);font-family:inherit;font-size:14.5px;margin-bottom:20px;transition:border-color .2s,background .2s;}
+.upload-form input:focus,.upload-form select:focus,.upload-form textarea:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(212,175,55,.12);}
+.upload-form textarea{min-height:130px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+
+.file-drop{position:relative;border:2px dashed #d4cdb8;border-radius:12px;padding:36px 24px;text-align:center;background:#fdfcf9;cursor:pointer;transition:all .25s;margin-bottom:10px;}
+.file-drop:hover{border-color:var(--gold);background:#fffbf0;}
+.file-drop.dragover{border-color:var(--gold);background:#fffbf0;transform:scale(1.01);}
+.file-drop input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;}
+.file-drop-icon{font-size:42px;color:var(--gold);margin-bottom:14px;line-height:1;}
+.file-drop-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.file-drop-sub{font-size:13px;color:var(--muted);}
+.file-name{display:none;font-size:13px;font-weight:600;color:#1e7e34;margin-bottom:20px;padding:10px 14px;background:#f0f7f0;border-radius:6px;border-left:3px solid #1e7e34;text-align:left;word-break:break-all;}
+.file-name.show{display:block;}
+.file-hint{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:24px;text-align:center;}
+
+.upload-form button{width:100%;padding:17px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border:none;border-radius:8px;font-weight:700;font-size:15px;cursor:pointer;transition:transform .2s,box-shadow .2s;letter-spacing:.3px;}
+.upload-form button:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(10,25,47,.25);}
+.upload-form button:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+
+.form-success{display:none;background:#f0f7f0;border:1px solid #b8dfba;border-left:4px solid #1e7e34;padding:24px;border-radius:10px;color:#1e7e34;font-size:14.5px;line-height:1.7;margin-bottom:24px;}
+.form-success.show{display:block;}
+
+.form-error{display:none;background:#fdecea;border:1px solid #f5c6c2;border-left:4px solid #c0392b;padding:20px;border-radius:10px;color:#c0392b;font-size:14px;margin-bottom:24px;}
+.form-error.show{display:block;}
+
+.alt-contact{background:var(--cream);border-radius:12px;padding:24px;margin-top:28px;font-size:13.5px;color:var(--muted);line-height:1.7;}
+.alt-contact strong{color:var(--navy);}
+
+@media(max-width:700px){.upload-form{padding:28px 22px;}.form-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo"><a href="index.html" style="color:var(--gold);">ABIR PUBLISHING</a></div>
+<nav>
+<a href="index.html#services">Services</a>
+<a href="index.html#team">Team</a>
+<a href="index.html#portfolio">Work</a>
+<a href="index.html#faq">FAQ</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="svc-hero">
+<div class="svc-hero-inner">
+<div class="crumb"><a href="index.html">Home</a> / Submit Manuscript</div>
+<h1>Submit Your Manuscript</h1>
+<div class="tag">We reply within 24 hours</div>
+</div>
+</section>
+
+<div class="upload-wrap">
+
+<form class="upload-form" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" id="manuscriptForm">
+
+  <input type="hidden" name="access_key" value="014410c8-909b-4af1-a7e9-4bc9b78c0082">
+  <input type="hidden" name="subject" value="New Manuscript Submission — Abir Publishing">
+  <input type="hidden" name="from_name" value="Abir Publishing Website">
+
+  <div class="form-success" id="formSuccess">
+    ✅ <strong>Your manuscript has been sent.</strong><br>
+    Thank you — we have received your file and will review it. You'll hear from us within 24 hours at the email address you provided.
+  </div>
+
+  <div class="form-error" id="formError">
+    ⚠️ Something went wrong sending your manuscript. Please try again, or send it directly to <a href="mailto:Ademolaadedayo52@gmail.com" style="color:#c0392b;font-weight:700;">Ademolaadedayo52@gmail.com</a> or <a href="https://wa.me/2349066324358" style="color:#c0392b;font-weight:700;">WhatsApp</a>.
+  </div>
+
+  <h2>Send Us Your Work</h2>
+  <p>Upload your manuscript file and tell us a little about it. We'll review it and get back to you with a detailed quote within 24 hours.</p>
+
+  <div class="form-row">
+    <div>
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div>
+      <label for="phone">Phone / WhatsApp</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+    <div>
+      <label for="service">Service You Need</label>
+      <select id="service" name="service" required>
+        <option value="">Select a service</option>
+        <option>Editing</option>
+        <option>Proofreading</option>
+        <option>Manuscript Preparation</option>
+        <option>Page Design &amp; Layout</option>
+        <option>Cover Design</option>
+        <option>Full Production (multiple services)</option>
+        <option>Printing &amp; Binding</option>
+        <option>Not sure — need advice</option>
+      </select>
+    </div>
+  </div>
+
+  <label for="title">Working Title of Your Textbook</label>
+  <input type="text" id="title" name="title" placeholder="e.g. Financial Accounting for Nigerian Students">
+
+  <label for="attachment">Upload Your Manuscript</label>
+  <div class="file-drop" id="fileDrop">
+    <input type="file" id="attachment" name="attachment" accept=".doc,.docx,.pdf,.rtf,.txt,.odt" required>
+    <div class="file-drop-icon">📄</div>
+    <div class="file-drop-title">Click to choose a file, or drag it here</div>
+    <div class="file-drop-sub">Accepted: Word, PDF, RTF, TXT, ODT</div>
+  </div>
+  <div class="file-name" id="fileName"></div>
+  <div class="file-hint">For files larger than 5MB, please send directly via WhatsApp or email.</div>
+
+  <label for="message">Tell Us About Your Manuscript</label>
+  <textarea id="message" name="message" placeholder="Word count, subject, audience, what you need, and any deadlines…" required></textarea>
+
+  <button type="submit" id="submitBtn">Send Manuscript</button>
+
+  <div class="alt-contact">
+    <strong>Prefer to send directly?</strong><br>
+    Email: <a href="mailto:Ademolaadedayo52@gmail.com" style="color:var(--gold);font-weight:600;">Ademolaadedayo52@gmail.com</a><br>
+    WhatsApp: <a href="https://wa.me/2349066324358" style="color:var(--gold);font-weight:600;">+234 906 632 4358</a>
+  </div>
+
+</form>
+
+</div>
+
+<footer>
+<div class="footer-inner">
+<div class="footer-bottom" style="border:none;">
+<span>© 2026 Abir Publishing. All rights reserved.</span>
+<span><a href="https://wa.me/2349066324358" target="_blank" rel="noopener" style="color:var(--gold);">WhatsApp</a> · <a href="mailto:Ademolaadedayo52@gmail.com" style="color:var(--gold);">Ademolaadedayo52@gmail.com</a></span>
+</div>
+</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/2349066324358" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script>
+var fileInput = document.getElementById("attachment");
+var fileName = document.getElementById("fileName");
+var fileDrop = document.getElementById("fileDrop");
+
+fileInput.addEventListener("change", function () {
+  if (fileInput.files.length > 0) {
+    var f = fileInput.files[0];
+    var mb = (f.size / 1024 / 1024).toFixed(2);
+    fileName.textContent = "📎 " + f.name + " (" + mb + " MB)";
+    fileName.classList.add("show");
+  }
+});
+
+["dragenter", "dragover"].forEach(function (evt) {
+  fileDrop.addEventListener(evt, function (e) { e.preventDefault(); fileDrop.classList.add("dragover"); });
+});
+["dragleave", "drop"].forEach(function (evt) {
+  fileDrop.addEventListener(evt, function (e) { e.preventDefault(); fileDrop.classList.remove("dragover"); });
+});
+
+document.getElementById("manuscriptForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = document.getElementById("submitBtn");
+  var success = document.getElementById("formSuccess");
+  var error = document.getElementById("formError");
+
+  success.classList.remove("show");
+  error.classList.remove("show");
+  btn.disabled = true;
+  btn.textContent = "Sending…";
+
+  var data = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: data
+  })
+  .then(function (res) { return res.json(); })
+  .then(function (result) {
+    if (result.success) {
+      form.reset();
+      fileName.classList.remove("show");
+      success.classList.add("show");
+      window.scrollTo({ top: 100, behavior: "smooth" });
+    } else {
+      throw new Error("Submission failed");
+    }
+  })
+  .catch(function () {
+    error.classList.add("show");
+    window.scrollTo({ top: 100, behavior: "smooth" });
+  })
+  .finally(function () {
+    btn.disabled = false;
+    btn.textContent = "Send Manuscript";
+  });
+});
+</script>
+
+</body>
+</html>
