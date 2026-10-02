@@ -118,3 +118,4 @@
     init();
   }
 })();
+<script src="quote.js"></script>
