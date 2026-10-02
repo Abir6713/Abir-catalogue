@@ -6,7 +6,6 @@
   var EMAIL = "Ademolaadedayo52@gmail.com";
   var SUBMIT_PAGE = "submit-manuscript.html";
 
-  /* ---- CSS ---- */
   var css = document.createElement("style");
   css.textContent = `
 .quote-modal-overlay{position:fixed;inset:0;background:rgba(10,25,47,.75);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s;}
@@ -45,11 +44,10 @@
   `;
   document.head.appendChild(css);
 
-  /* ---- PRICING DATA ---- */
   var DATA = {
     "Topic & Content Planning": {hero:"From ₦50,000 · Delivery: 5–7 working days",head:"Pricing — Based on Chapter Count",rows:[["Small","Up to 8 chapters","₦50,000","Best for short workbooks, single-semester modules and pilot projects."],["Standard","9–15 chapters","₦80,000","The typical full textbook — chapter breakdown, learning outcomes, sequencing."],["Full","16+ chapters","₦120,000","Large multi-part textbooks with complex curriculum alignment."]],note:"Final quote confirmed after we know your subject, audience and target length."},
     "Copywriting": {hero:"From ₦30,000 · Delivery: 7–10 working days",head:"Pricing — Based on Deliverables",rows:[["Blurb Only","Back cover","₦30,000","A single 100–150 word back-cover blurb."],["Blurb + Bio","+ Tagline","₦50,000","Blurb, professional author bio, tagline and subtitle."],["Full Package","All copy","₦80,000","Blurb, bio, tagline, intro copy, marketing description and social copy."]],note:"Two rounds of revisions included in every tier."},
-    "Content Development": {hero:"From ₦450,000 · Delivery: 8–16 weeks",head:"Pricing — Based on Word Count",rows:[["Small","Up to 30,000 words","₦450,000","Short textbook or supplementary course material. Approx. ₦15/word."],["Standard","30,000–60,000 words","₦750,000","A full standard textbook. Approx. ₦15/word."],["Full","60,000+ words","From ₦1,100,000","Large comprehensive textbook with worked examples."]],note:"Priced at approximately ₦15 per word — matching market rates for professional ghostwriting in Nigeria."},
+    "Content Development": {hero:"From ₦450,000 · Delivery: 8–16 weeks",head:"Pricing — Based on Word Count",rows:[["Small","Up to 30,000 words","₦450,000","Short textbook or supplementary course material."],["Standard","30,000–60,000 words","₦750,000","A full standard textbook. Approx. ₦15/word."],["Full","60,000+ words","From ₦1,100,000","Large comprehensive textbook with worked examples."]],note:"Priced at approximately ₦15 per word — matching market rates for professional ghostwriting in Nigeria."},
     "Image Sourcing & Placement": {hero:"From ₦50,000 · Delivery: 7–14 working days",head:"Pricing — Based on Image Count",rows:[["Basic","10–20 images","₦50,000","Stock photos sourced, placed and captioned."],["Standard","20–40 images","₦80,000","Full textbook coverage with figures and captions."],["Custom","40+ or illustrations","From ₦150,000","Custom-drawn diagrams and scientific illustrations."]],note:"Stock images are licensed for print. Custom illustrations are drawn specifically for your textbook."},
     "Editing": {hero:"From ₦2.50/word · Delivery: 2–4 weeks",head:"Pricing — Based on Editing Depth",rows:[["Line Edit","Grammar & style","₦2.50/word","Grammar, spelling, punctuation. 50,000 words ≈ ₦125,000."],["Structural + Line","Most common","₦3.70/word","Chapter structure, flow, argument. 50,000 words ≈ ₦185,000."],["Full Developmental","Deep edit","₦4.50/word","Rewriting and restructuring. 50,000 words ≈ ₦225,000."]],note:"Rates match Nigerian market benchmarks for professional academic editing."},
     "Proofreading": {hero:"From ₦2.00/word · Delivery: 5–10 working days",head:"Pricing — Based on Format",rows:[["Manuscript","Word file","₦2.00/word","Before layout. 50,000 words ≈ ₦100,000."],["Laid-out Pages","PDF or InDesign","₦2.40/word","Final proofread on designed pages. 50,000 words ≈ ₦120,000."],["Rush / Large","Priority","₦3.00/word","Priority turnaround. 50,000 words ≈ ₦150,000."]],note:"Two full passes included in every tier."},
@@ -58,8 +56,8 @@
     "Page Design & Layout": {hero:"From ₦150,000 · Delivery: 3–6 weeks",head:"Pricing — Based on Page Count",rows:[["Small","Up to 100 pages","₦150,000","Short workbooks and supplementary texts."],["Standard","100–250 pages","₦200,000","Full textbook layout with images and page numbers."],["Complex","250+ pages","From ₦300,000","Large textbooks with tables, charts and colour figures."]],note:"Delivered as print-ready PDF or native InDesign files."},
     "Cover Design": {hero:"From ₦50,000 · Delivery: 7–14 working days",head:"Pricing — Based on Deliverables",rows:[["Front Only","Front cover","₦50,000","Single front cover concept."],["Front + Spine + Back","Full wrap","₦80,000","Full print cover with ISBN and barcode placement."],["Full Package","Print + digital","₦120,000","Three concepts, full wrap, CMYK print + RGB digital."]],note:"Unlimited refinements included on the chosen concept."},
     "Prepress Preparation": {hero:"From ₦60,000 · Delivery: 3–5 working days",head:"Pricing — Based on Complexity",rows:[["Text Only","Simple documents","₦60,000","Standard preflight and PDF/X export."],["Standard","Text + images","₦90,000","Image resolution checks and colour mode conversion."],["Complex","Colour & charts","From ₦150,000","Full-colour textbooks with charts and tables."]],note:"Every tier includes a completed preflight report."},
-    "Printing": {hero:"Custom Quote · Based on run size",head:"Pricing — Per Copy, Based on Quantity",rows:[["Short Run","~100 copies","₦2,800 – ₦3,500","Per copy. Best for departmental runs."],["Medium Run","~500 copies","₦1,800 – ₦2,500","Per copy. Best value for faculty distribution."],["Long Run","1,000+ copies","₦1,300 – ₦1,700","Per copy. Best for nationwide distribution."]],note:"Rates are for A5 textbooks, 100–150 pages, perfect-bound. Final quote depends on page count and finishing."},
-    "Finishing & Binding": {hero:"Custom Quote · Based on style",head:"Pricing — Per Copy, Based on Binding Style",rows:[["Saddle-Stitch","Under 80 pages","From ₦150","Per copy. Stapled along the spine."],["Perfect Binding","80–400 pages","From ₦350","Per copy. Glued square spine — the standard for textbooks."],["Hardcover","Reference texts","From ₦800","Per copy. Rigid board cover."]],note:"Binding cost is usually included in the per-copy printing quote when ordered together."},
+    "Printing": {hero:"Custom Quote · Based on run size",head:"Pricing — Per Copy, Based on Quantity",rows:[["Short Run","~100 copies","₦2,800 – ₦3,500","Per copy. Best for departmental runs."],["Medium Run","~500 copies","₦1,800 – ₦2,500","Per copy. Best value for faculty distribution."],["Long Run","1,000+ copies","₦1,300 – ₦1,700","Per copy. Best for nationwide distribution."]],note:"Rates are for A5 textbooks, 100–150 pages, perfect-bound."},
+    "Finishing & Binding": {hero:"Custom Quote · Based on style",head:"Pricing — Per Copy, Based on Binding Style",rows:[["Saddle-Stitch","Under 80 pages","From ₦150","Per copy. Stapled along the spine."],["Perfect Binding","80–400 pages","From ₦350","Per copy. Glued square spine."],["Hardcover","Reference texts","From ₦800","Per copy. Rigid board cover."]],note:"Binding cost is usually included in the per-copy printing quote when ordered together."},
     "Final Inspection": {hero:"From ₦40,000 · Delivery: 2–4 working days",head:"Pricing — Based on Print Run Size",rows:[["Small","Up to 200 copies","₦40,000","Multiple sample copies inspected, written report."],["Medium","200–1,000 copies","₦70,000","Expanded sampling across the print run."],["Large","1,000+ copies","₦100,000","Full statistical sampling and QC documentation."]],note:"Every inspection ends with a written pass/fail report."}
   };
 
@@ -140,13 +138,25 @@
   function extractService(href) {
     try {
       var url = new URL(href);
-      var t = url.searchParams.get("text") || "";
+      var t = url.searchParams.get("text") || url.searchParams.get("subject") || "";
       var c = t.replace(/^Enquiry\s*:\s*/i, "").replace(/^New\s+Enquiry.*?—\s*/i, "").trim();
-      return c || "Abir Publishing Services";
-    } catch (e) { return "Abir Publishing Services"; }
+      return c || null;
+    } catch (e) { return null; }
+  }
+
+  function getServiceName(link) {
+    // 1. Try from the link href
+    var fromHref = extractService(link.href);
+    if (fromHref) return fromHref;
+    // 2. Try from the page h1
+    var h1 = document.querySelector(".svc-hero h1");
+    if (h1) return h1.textContent.trim();
+    // 3. Fallback
+    return "Abir Publishing Services";
   }
 
   function wire() {
+    // Close handlers
     document.addEventListener("click", function (e) {
       var o = document.getElementById("quoteModalOverlay");
       if (o && e.target === o) closeModal();
@@ -155,11 +165,16 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") closeModal();
     });
-    document.querySelectorAll('a.cta-btn[href*="wa.me"]').forEach(function (link) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        openModal(extractService(link.href));
-      });
+
+    // EVENT DELEGATION — catches clicks on ANY .cta-btn link, regardless of href
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest ? e.target.closest("a.cta-btn") : null;
+      if (!link) return;
+      // Ignore the modal's own buttons
+      if (link.closest(".quote-modal")) return;
+      e.preventDefault();
+      var service = getServiceName(link);
+      openModal(service);
     });
   }
 
