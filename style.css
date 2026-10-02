@@ -322,3 +322,30 @@ nav a{padding:7px 12px;font-size:13px;}
 @media(max-width:500px){
 .creds-grid{grid-template-columns:1fr;}
 }
+/* QUOTE MODAL */
+.quote-modal-overlay{position:fixed;inset:0;background:rgba(10,25,47,.75);backdrop-filter:blur(6px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s;}
+.quote-modal-overlay.open{display:flex;opacity:1;}
+.quote-modal{background:#fff;border-radius:16px;max-width:460px;width:100%;padding:38px 34px 34px;box-shadow:0 30px 80px rgba(0,0,0,.35);position:relative;transform:translateY(10px);transition:transform .3s;}
+.quote-modal-overlay.open .quote-modal{transform:translateY(0);}
+.quote-modal-close{position:absolute;top:14px;right:16px;width:34px;height:34px;border:none;background:#f5f0e4;color:var(--navy);border-radius:50%;font-size:20px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .2s;}
+.quote-modal-close:hover{background:var(--gold);color:#fff;}
+.quote-modal-kicker{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.quote-modal-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);line-height:1.25;margin-bottom:10px;font-weight:700;}
+.quote-modal-sub{font-size:13.5px;color:var(--muted);margin-bottom:26px;line-height:1.6;}
+.quote-modal-options{display:grid;gap:12px;}
+.quote-option{display:flex;align-items:center;gap:16px;padding:18px 20px;border:1.5px solid var(--line);border-radius:12px;transition:all .22s;cursor:pointer;background:#fff;}
+.quote-option:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(10,25,47,.12);}
+.quote-option.wa:hover{border-color:#25D366;background:#f0fdf4;}
+.quote-option.email:hover{border-color:var(--navy);background:#f5f7fb;}
+.quote-option-icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:22px;flex-shrink:0;color:#fff;font-weight:700;}
+.quote-option.wa .quote-option-icon{background:linear-gradient(135deg,#25D366,#128C7E);}
+.quote-option.email .quote-option-icon{background:linear-gradient(135deg,var(--navy),var(--navy2));}
+.quote-option-label{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.quote-option-desc{font-size:12.5px;color:var(--muted);}
+.quote-option-arrow{margin-left:auto;color:var(--gold);font-size:18px;font-weight:700;}
+@media(max-width:500px){
+.quote-modal{padding:32px 24px 26px;}
+.quote-modal-title{font-size:21px;}
+.quote-option{padding:16px;}
+.quote-option-icon{width:44px;height:44px;font-size:20px;}
+}
