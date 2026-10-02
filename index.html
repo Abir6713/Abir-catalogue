@@ -1,495 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Development | Abir Publishing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0A192F; --navy-light: #172A45; --gold: #D4AF37; --light: #F8F9FA; --text: #333; --muted: #6c757d;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--text); line-height: 1.6; }
+    
+    header { background: var(--navy); color: #fff; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--gold); }
+    nav a { color: #fff; text-decoration: none; margin-left: 25px; font-size: 14px; }
+    nav a:hover { color: var(--gold); }
 
-<title>Abir Publishing | Publishing & Editorial Services</title>
+    .service-hero { background: var(--navy-light); color: #fff; padding: 80px 20px; text-align: center; }
+    .service-hero .breadcrumb { font-size: 13px; color: #8892b0; margin-bottom: 15px; }
+    .service-hero .breadcrumb a { color: var(--gold); text-decoration: none; }
+    .service-hero h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 15px; }
+    .service-hero .price-tag { font-size: 24px; font-weight: 700; color: var(--gold); }
 
-<meta name="description" content="Abir Publishing provides professional publishing, code writing, editing and proofreading services.">
+    .container { max-width: 900px; margin: auto; padding: 60px 20px; }
+    .container h2 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 28px; margin: 40px 0 20px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
+    .container h2:first-of-type { margin-top: 0; }
+    .container p { margin-bottom: 20px; font-size: 16px; color: #444; }
+    .container ul { list-style: none; margin-bottom: 30px; }
+    .container ul li { padding: 10px 0 10px 30px; position: relative; border-bottom: 1px solid #eee; }
+    .container ul li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
 
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+    .cta-box { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; margin-top: 50px; border-top: 4px solid var(--navy); }
+    .cta-box h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 15px; }
+    .cta-box p { margin-bottom: 25px; }
+    .cta-button { display: inline-block; background: var(--navy); color: #fff; padding: 15px 35px; border-radius: 4px; text-decoration: none; font-weight: 600; }
 
-html {
-scroll-behavior: smooth;
-}
+    footer { background: #050C1A; color: #8892b0; text-align: center; padding: 40px 20px; font-size: 14px; margin-top: 60px; }
 
-body {
-font-family: Arial, Helvetica, sans-serif;
-background: #f7f5f1;
-color: #222;
-line-height: 1.6;
-}
-
-/* HEADER */
-
-header {
-background: #151515;
-color: white;
-padding: 22px 6%;
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.logo {
-font-size: 22px;
-font-weight: bold;
-letter-spacing: 1px;
-}
-
-nav a {
-color: white;
-text-decoration: none;
-margin-left: 25px;
-font-size: 14px;
-}
-
-nav a:hover {
-opacity: 0.7;
-}
-
-/* HERO */
-
-.hero {
-background: #1d1d1d;
-color: white;
-padding: 90px 20px;
-text-align: center;
-}
-
-.hero h1 {
-font-size: 48px;
-margin-bottom: 15px;
-}
-
-.hero p {
-max-width: 650px;
-margin: 0 auto 30px;
-color: #d4d4d4;
-font-size: 18px;
-}
-
-.hero-button {
-display: inline-block;
-background: white;
-color: #111;
-padding: 13px 25px;
-border-radius: 6px;
-text-decoration: none;
-font-weight: bold;
-}
-
-/* INTRO */
-
-.intro {
-text-align: center;
-max-width: 750px;
-margin: auto;
-padding: 70px 20px 30px;
-}
-
-.intro h2 {
-font-size: 32px;
-margin-bottom: 15px;
-}
-
-.intro p {
-color: #666;
-}
-
-/* SERVICES */
-
-.services-container {
-max-width: 1100px;
-margin: auto;
-padding: 30px 20px 80px;
-}
-
-.services {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 25px;
-}
-
-.service-card {
-background: white;
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-transition: transform 0.2s ease;
-}
-
-.service-card:hover {
-transform: translateY(-5px);
-}
-
-.service-image {
-width: 100%;
-height: 210px;
-object-fit: cover;
-display: block;
-}
-
-.service-content {
-padding: 25px;
-}
-
-.service-content h3 {
-font-size: 22px;
-margin-bottom: 10px;
-}
-
-.service-content p {
-color: #666;
-font-size: 15px;
-margin-bottom: 20px;
-}
-
-.price {
-font-size: 24px;
-font-weight: bold;
-color: #111;
-}
-
-/* WHY US */
-
-.why-us {
-background: #151515;
-color: white;
-padding: 70px 20px;
-text-align: center;
-}
-
-.why-us h2 {
-font-size: 32px;
-margin-bottom: 35px;
-}
-
-.features {
-max-width: 900px;
-margin: auto;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 30px;
-}
-
-.feature h3 {
-margin-bottom: 10px;
-}
-
-.feature p {
-color: #c8c8c8;
-font-size: 14px;
-}
-
-/* CTA */
-
-.cta {
-text-align: center;
-padding: 70px 20px;
-}
-
-.cta h2 {
-font-size: 32px;
-margin-bottom: 15px;
-}
-
-.cta p {
-color: #666;
-margin-bottom: 25px;
-}
-
-.cta-button {
-display: inline-block;
-background: #151515;
-color: white;
-padding: 14px 28px;
-border-radius: 6px;
-text-decoration: none;
-font-weight: bold;
-}
-
-/* FOOTER */
-
-footer {
-background: #111;
-color: #aaa;
-text-align: center;
-padding: 30px 20px;
-font-size: 14px;
-}
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-header {
-flex-direction: column;
-gap: 15px;
-}
-
-nav a {
-margin: 0 8px;
-}
-
-.hero {
-padding: 70px 20px;
-}
-
-.hero h1 {
-font-size: 38px;
-}
-
-.hero p {
-font-size: 16px;
-}
-
-.services {
-grid-template-columns: 1fr;
-}
-
-.features {
-grid-template-columns: 1fr;
-}
-
-.intro h2,
-.why-us h2,
-.cta h2 {
-font-size: 28px;
-}
-}
-</style>
+    @media (max-width: 768px) {
+      header { flex-direction: column; gap: 15px; }
+      nav a { margin: 0 10px; }
+      .service-hero h1 { font-size: 30px; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-
-<header>
-
-<div class="logo">
-ABIR PUBLISHING
-</div>
-
-<nav>
-<a href="#services">Services</a>
-<a href="#about">About</a>
-</nav>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<h1>Abir Publishing</h1>
-
-<p>
-Professional publishing and editorial services designed
-to help bring your ideas, manuscripts and written projects
-to life.
-</p>
-
-<a href="#services" class="hero-button">
-View Our Services
-</a>
-
-</section>
-
-
-<!-- INTRO -->
-
-<section class="intro" id="about">
-
-<h2>Publishing & Editorial Services</h2>
-
-<p>
-From writing and editing to final proofreading,
-Abir Publishing provides careful and professional
-support throughout the publishing process.
-</p>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section class="services-container" id="services">
-
-<div class="services">
-
-
-<!-- CODE WRITING -->
-
-<div class="service-card">
-
-<img
-class="service-image"
-src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80"
-alt="Writing and manuscript preparation"
->
-
-<div class="service-content">
-
-<h3>Code Writing</h3>
-
-<p>
-Professional writing support for manuscripts,
-academic projects and other written materials.
-</p>
-
-<div class="price">
-₦100,000
-</div>
-
-</div>
-
-</div>
-
-
-<!-- EDITING -->
-
-<div class="service-card">
-
-<img
-class="service-image"
-src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80"
-alt="Editing and reviewing documents"
->
-
-<div class="service-content">
-
-<h3>Editing</h3>
-
-<p>
-Detailed editing to improve clarity, structure,
-grammar, consistency and overall readability.
-</p>
-
-<div class="price">
-₦100,000
-</div>
-
-</div>
-
-</div>
-
-
-<!-- PROOFREADING -->
-
-<div class="service-card">
-
-<img
-class="service-image"
-src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80"
-alt="Proofreading a document"
->
-
-<div class="service-content">
-
-<h3>Proofreading</h3>
-
-<p>
-Careful final checks to identify spelling,
-grammar, punctuation and typographical errors.
-</p>
-
-<div class="price">
-₦200,000
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- WHY ABIR -->
-
-<section class="why-us">
-
-<h2>Why Choose Abir Publishing?</h2>
-
-<div class="features">
-
-<div class="feature">
-
-<h3>Professional</h3>
-
-<p>
-We approach every project with attention
-to quality and detail.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<h3>Reliable</h3>
-
-<p>
-Your written work is handled with care
-throughout the process.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<h3>Quality Focused</h3>
-
-<p>
-We help ensure your work is clear,
-polished and ready for its intended audience.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CALL TO ACTION -->
-
-<section class="cta">
-
-<h2>Have a Project in Mind?</h2>
-
-<p>
-Explore our services and find the right support
-for your publishing or editorial project.
-</p>
-
-<a href="#services" class="cta-button">
-View Services
-</a>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<p>
-© 2026 Abir Publishing. All rights reserved.
-</p>
-
-</footer>
+  <header>
+    <div class="logo"><a href="index.html" style="color:var(--gold); text-decoration:none;">ABIR PUBLISHING</a></div>
+    <nav>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="service-hero">
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#services">Services</a> &nbsp;/&nbsp; Content Development</div>
+    <h1>Content Development</h1>
+    <div class="price-tag">Starting at ₦250,000</div>
+  </section>
+
+  <div class="container">
+    
+    <h2>What It Entails</h2>
+    <p>Content development is the heart of your textbook. We take the outline and scope defined in the planning stage and turn it into fully written, engaging chapters. Our writers work closely with you to ensure the voice, tone, and complexity of the material is perfectly suited for your target audience—whether that's primary school students, university undergraduates, or professional trainees.</p>
+    <p>We don't just write; we develop educational assets. This means creating end-of-chapter questions, case studies, diagrams, and practical examples that reinforce learning and meet curriculum standards.</p>
+
+    <h2>What's Included</h2>
+    <ul>
+      <li><strong>Drafting Chapters:</strong> Writing full chapters based on your approved outline.</li>
+      <li><strong>Curriculum Alignment:</strong> Ensuring content matches national or institutional educational standards.</li>
+      <li><strong>Educational Features:</strong> Creating exercises, summaries, and review questions.</li>
+      <li><strong>Collaboration:</strong> Revisions and adjustments based on your feedback during the writing process.</li>
+      <li><strong>Source Integration:</strong> Properly citing research and integrating academic sources accurately.</li>
+    </ul>
+
+    <h2>Our Process</h2>
+    <p>We begin with a kick-off consultation to align on tone and expectations. From there, we draft chapters in phases, sharing them with you for review before moving to the next. This ensures the manuscript stays on track and meets your vision from the very first page.</p>
+
+    <div class="cta-box">
+      <h3>Ready to start your manuscript?</h3>
+      <p>Let's discuss your textbook project. We'll provide a tailored quote based on your word count and subject matter.</p>
+      <a href="mailto:info@abirpublishing.com?subject=Content Development Enquiry" class="cta-button">Request a Quote</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Abir Publishing. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
