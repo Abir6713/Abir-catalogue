@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Abir Publishing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;max-width:1100px;margin:auto;padding:60px 20px;}
+.contact-info h2{font-family:'Playfair Display',serif;color:var(--navy);font-size:28px;margin-bottom:16px;}
+.contact-info p{color:#3a3a3a;font-size:15px;margin-bottom:26px;}
+.contact-item{display:flex;align-items:flex-start;gap:16px;padding:18px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:14px;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s;}
+.contact-item:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.contact-icon{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-size:20px;flex-shrink:0;font-weight:700;}
+.contact-icon.wa{background:#25D366;color:#fff;}
+.contact-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700;margin-bottom:4px;}
+.contact-value{font-size:15px;font-weight:600;color:var(--navy);}
+
+.form{background:#fff;border:1px solid var(--line);border-radius:12px;padding:34px;box-shadow:0 4px 18px rgba(0,0,0,.05);}
+.form h2{font-family:'Playfair Display',serif;color:var(--navy);font-size:24px;margin-bottom:6px;}
+.form > p{color:var(--muted);font-size:14px;margin-bottom:24px;}
+.form label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);margin-bottom:7px;}
+.form input,.form select,.form textarea{width:100%;padding:13px 14px;border:1px solid #dcd6c8;border-radius:6px;background:#fdfcf9;color:var(--text);font-family:inherit;font-size:14px;margin-bottom:16px;}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--gold);background:#fff;}
+.form textarea{min-height:130px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form button{width:100%;padding:15px;background:var(--navy);color:#fff;border:none;border-radius:6px;font-weight:700;font-size:15px;cursor:pointer;transition:background .2s;}
+.form button:hover{background:var(--navy2);}
+
+@media(max-width:800px){.contact-grid{grid-template-columns:1fr;gap:36px;}.form-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo"><a href="index.html" style="color:var(--gold);">ABIR PUBLISHING</a></div>
+<nav>
+<a href="index.html#services">Services</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="svc-hero">
+<div class="crumb"><a href="index.html">Home</a> / Contact</div>
+<h1>Let's Talk About Your Project</h1>
+<div class="tag">We reply within 24 hours</div>
+</section>
+
+<div class="contact-grid">
+
+<div class="contact-info">
+<h2>Reach Us Directly</h2>
+<p>Tell us what you need — a single service or a full textbook project. Send a message on WhatsApp, or fill the form and we'll get back to you quickly.</p>
+
+<a class="contact-item" href="https://wa.me/2349066324358" target="_blank" rel="noopener">
+<div class="contact-icon wa">💬</div>
+<div>
+<div class="contact-label">WhatsApp</div>
+<div class="contact-value">+234 906 632 4358</div>
+</div>
+</a>
+
+<a class="contact-item" href="mailto:Ademolaadedayo52@gmail.com">
+<div class="contact-icon">✉</div>
+<div>
+<div class="contact-label">Email</div>
+<div class="contact-value">Ademolaadedayo52@gmail.com</div>
+</div>
+</a>
+
+<a class="contact-item" href="tel:+2349066324358">
+<div class="contact-icon">☎</div>
+<div>
+<div class="contact-label">Phone</div>
+<div class="contact-value">0906 632 4358</div>
+</div>
+</a>
+
+</div>
+
+<form class="form" id="contactForm">
+<h2>Send Us a Message</h2>
+<p>Fill the form — it opens WhatsApp with your message ready to send.</p>
+
+<div class="form-row">
+<div>
+<label for="name">Your Name</label>
+<input id="name" type="text" required>
+</div>
+<div>
+<label for="phone">Phone Number</label>
+<input id="phone" type="tel" required>
+</div>
+</div>
+
+<label for="service">Service You Need</label>
+<select id="service" required>
+<option value="">Select a service</option>
+<option>Topic & Content Planning</option>
+<option>Copywriting</option>
+<option>Content Development</option>
+<option>Image Sourcing & Placement</option>
+<option>Editing</option>
+<option>Proofreading</option>
+<option>Manuscript Preparation</option>
+<option>Corrections & Revision</option>
+<option>Page Design & Layout</option>
+<option>Cover Design</option>
+<option>Prepress Preparation</option>
+<option>Printing</option>
+<option>Finishing & Binding</option>
+<option>Final Inspection</option>
+<option>Full Project (Multiple Services)</option>
+<option>Not sure — need advice</option>
+</select>
+
+<label for="message">Tell Us About Your Project</label>
+<textarea id="message" placeholder="Subject, audience, expected length, timeline…" required></textarea>
+
+<button type="submit">Send on WhatsApp</button>
+</form>
+
+</div>
+
+<footer>
+<p>© 2026 Abir Publishing. All rights reserved. | <a href="mailto:Ademolaadedayo52@gmail.com">Ademolaadedayo52@gmail.com</a></p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var name = document.getElementById("name").value.trim();
+  var phone = document.getElementById("phone").value.trim();
+  var service = document.getElementById("service").value;
+  var message = document.getElementById("message").value.trim();
+
+  var text = "New Enquiry — Abir Publishing%0A%0A" +
+             "Name: " + encodeURIComponent(name) + "%0A" +
+             "Phone: " + encodeURIComponent(phone) + "%0A" +
+             "Service: " + encodeURIComponent(service) + "%0A%0A" +
+             "Details: " + encodeURIComponent(message);
+
+  window.open("https://wa.me/2349066324358?text=" + text, "_blank");
+});
+</script>
+
+</body>
+</html>
