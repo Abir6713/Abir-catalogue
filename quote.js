@@ -110,7 +110,7 @@
         '<div class="quote-modal-sub" id="qService">Choose the contact method that suits you best.</div>' +
         '<div class="quote-modal-options">' +
           '<a class="quote-option wa" id="qWa" href="#" target="_blank" rel="noopener"><div class="quote-option-icon">💬</div><div><div class="quote-option-label">WhatsApp</div><div class="quote-option-desc">Chat instantly · fastest reply</div></div><div class="quote-option-arrow">→</div></a>' +
-          '<a class="quote-option email" id="qEmail" href="#"><div class="quote-option-icon">✉</div><div><div class="quote-option-label">Email</div><div class="quote-option-desc">Send a detailed message</div></div><div class="quote-option-arrow">→</div></a>' +
+          '<a class="quote-option email" id="qEmail" href="#" target="_blank" rel="noopener"><div class="quote-option-icon">✉</div><div><div class="quote-option-label">Email (Gmail)</div><div class="quote-option-desc">Opens Gmail compose in a new tab</div></div><div class="quote-option-arrow">→</div></a>' +
           '<a class="quote-option manuscript" id="qManuscript" href="' + SUBMIT_PAGE + '"><div class="quote-option-icon">📄</div><div><div class="quote-option-label">Submit Manuscript</div><div class="quote-option-desc">Upload your file &amp; get a quote</div></div><div class="quote-option-arrow">→</div></a>' +
         '</div>' +
       '</div>';
@@ -118,10 +118,16 @@
     return overlay;
   }
 
+  function buildGmailUrl(service) {
+    var subject = encodeURIComponent("Enquiry: " + service);
+    var body = encodeURIComponent("Hi Abir Publishing,\n\nI would like to enquire about " + service + ".\n\nProject details:\n\n— \n\nThank you.");
+    return "https://mail.google.com/mail/?view=cm&fs=1&to=" + EMAIL + "&su=" + subject + "&body=" + body;
+  }
+
   function openModal(service) {
     var overlay = document.getElementById("quoteModalOverlay") || buildModal();
     document.getElementById("qWa").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent("Enquiry: " + service);
-    document.getElementById("qEmail").href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Enquiry: " + service);
+    document.getElementById("qEmail").href = buildGmailUrl(service);
     document.getElementById("qService").textContent = service;
     var m = document.getElementById("qManuscript");
     if (window.location.pathname.indexOf(SUBMIT_PAGE) !== -1) m.style.display = "none";
@@ -145,18 +151,14 @@
   }
 
   function getServiceName(link) {
-    // 1. Try from the link href
     var fromHref = extractService(link.href);
     if (fromHref) return fromHref;
-    // 2. Try from the page h1
     var h1 = document.querySelector(".svc-hero h1");
     if (h1) return h1.textContent.trim();
-    // 3. Fallback
     return "Abir Publishing Services";
   }
 
   function wire() {
-    // Close handlers
     document.addEventListener("click", function (e) {
       var o = document.getElementById("quoteModalOverlay");
       if (o && e.target === o) closeModal();
@@ -166,15 +168,13 @@
       if (e.key === "Escape") closeModal();
     });
 
-    // EVENT DELEGATION — catches clicks on ANY .cta-btn link, regardless of href
+    // Catch clicks on any .cta-btn link
     document.addEventListener("click", function (e) {
       var link = e.target.closest ? e.target.closest("a.cta-btn") : null;
       if (!link) return;
-      // Ignore the modal's own buttons
       if (link.closest(".quote-modal")) return;
       e.preventDefault();
-      var service = getServiceName(link);
-      openModal(service);
+      openModal(getServiceName(link));
     });
   }
 
