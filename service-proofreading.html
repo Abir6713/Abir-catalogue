@@ -7,57 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#0A192F;--navy2:#172A45;--gold:#D4AF37;--cream:#FAF8F4;--text:#1a1a1a;--muted:#6c757d;--line:#e5e0d6;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);line-height:1.65;}
-a{color:inherit;text-decoration:none;}
-
-header{background:var(--navy);color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;}
-.logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:800;color:var(--gold);}
-nav a{color:#fff;margin-left:24px;font-size:14px;font-weight:500;}
-nav a:hover{color:var(--gold);}
-
-.svc-hero{background:var(--navy2);color:#fff;padding:70px 20px;text-align:center;}
-.crumb{font-size:13px;color:#8892b0;margin-bottom:16px;}
-.crumb a{color:var(--gold);}
-.svc-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);margin-bottom:14px;}
-.svc-hero .tag{font-size:20px;font-weight:700;color:var(--gold);}
-
-.wrap{max-width:880px;margin:auto;padding:60px 20px;}
-.wrap h2{font-family:'Playfair Display',serif;color:var(--navy);font-size:26px;margin:44px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--gold);}
-.wrap h2:first-of-type{margin-top:0;}
-.wrap p{margin-bottom:18px;font-size:16px;color:#3a3a3a;}
-.wrap ul{list-style:none;margin-bottom:24px;}
-.wrap ul li{padding:11px 0 11px 30px;position:relative;border-bottom:1px solid var(--line);}
-.wrap ul li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700;}
-
-/* SAMPLE BLOCK */
-.sample{background:#fff;border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;margin:24px 0 34px;box-shadow:0 4px 16px rgba(0,0,0,.05);}
-.sample-head{background:var(--navy);color:#fff;padding:12px 20px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
-.sample-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
-.sample-half{padding:24px;}
-.sample-half:first-child{border-right:1px solid var(--line);}
-.sample-half h4{font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;font-weight:700;}
-.sample-half.before h4{color:#c0392b;}
-.sample-half.after h4{color:#1e7e34;}
-.sample-text{font-size:15px;line-height:1.8;color:#333;}
-.sample-half.before .sample-text{color:#555;}
-.err{background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;}
-.fix{background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;}
-.note{font-size:13px;color:var(--muted);font-style:italic;margin-top:14px;}
-
-@media(max-width:700px){.sample-body{grid-template-columns:1fr;}.sample-half:first-child{border-right:0;border-bottom:1px solid var(--line);}}
-
-.cta-box{background:#fff;padding:38px;border-radius:10px;text-align:center;margin-top:50px;border-top:4px solid var(--navy);box-shadow:0 4px 16px rgba(0,0,0,.05);}
-.cta-box h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--navy);margin-bottom:14px;}
-.cta-box p{margin-bottom:24px;}
-.cta-btn{display:inline-block;background:var(--navy);color:#fff;padding:15px 34px;border-radius:4px;font-weight:700;font-size:15px;}
-
-footer{background:#050C1A;color:#8892b0;text-align:center;padding:38px 20px;font-size:13px;margin-top:60px;}
-
-@media(max-width:768px){header{flex-direction:column;gap:12px;}nav a{margin:0 9px;}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -101,19 +51,15 @@ footer{background:#050C1A;color:#8892b0;text-align:center;padding:38px 20px;font
 <div class="sample-body">
 <div class="sample-half before">
 <h4>Before</h4>
-<div class="sample-text">
-"<span class="err">Their</span> is <span class="err">alot</span> of students <span class="err">whom</span> <span class="err">doesnt</span> understand the concept of <span class="err">they're</span> textbook, and <span class="err">it have</span> been a problem since <span class="err">along</span> time. The <span class="err">lecturere</span> must <span class="err">recieve</span> the <span class="err">manuscripts</span> early if <span class="err">their</span> going to correct it."
-</div>
+<p style="font-size:15px;line-height:1.8;color:#555;">"<span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">Their</span> is <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">alot</span> of students <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">whom</span> <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">doesnt</span> understand the concept of <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">they're</span> textbook, and <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">it have</span> been a problem since <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">along</span> time. The <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">lecturere</span> must <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">recieve</span> the <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">manuscripts</span> early if <span style="background:#fdecea;text-decoration:line-through;text-decoration-color:#c0392b;color:#c0392b;padding:1px 3px;border-radius:2px;">their</span> going to correct it."</p>
 </div>
 <div class="sample-half after">
 <h4>After</h4>
-<div class="sample-text">
-"<span class="fix">There</span> are <span class="fix">a lot</span> of students <span class="fix">who</span> <span class="fix">don't</span> understand the concept of <span class="fix">their</span> textbook, and <span class="fix">it has</span> been a problem for <span class="fix">a long</span> time. The <span class="fix">lecturer</span> must <span class="fix">receive</span> the <span class="fix">manuscript</span> early if <span class="fix">they're</span> going to correct it."
+<p style="font-size:15px;line-height:1.8;color:#333;">"<span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">There</span> are <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">a lot</span> of students <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">who</span> <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">don't</span> understand the concept of <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">their</span> textbook, and <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">it has</span> been a problem for <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">a long</span> time. The <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">lecturer</span> must <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">receive</span> the <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">manuscript</span> early if <span style="background:#e8f5e9;color:#1e7e34;font-weight:600;padding:1px 3px;border-radius:2px;">they're</span> going to correct it."</p>
 </div>
 </div>
 </div>
-</div>
-<p class="note">Every correction is logged in a tracked-changes document so you can see exactly what was changed and why.</p>
+<p style="font-size:13px;color:#6c757d;font-style:italic;">Every correction is logged in a tracked-changes document so you can see exactly what was changed and why.</p>
 
 <h2>Our Process</h2>
 <p><strong>Pass 1 — Read-through:</strong> A full read for sense, catching the obvious errors.</p>
